@@ -6,5 +6,5 @@ urlpatterns = [
     path('college_create', views.CollegeCreate.as_view()),
     path('college_update/<int:pk>', views.CollegeUpdate.as_view()),
     path('college_delete/<int:pk>', views.CollegeDelete.as_view()),
-    path('', views.Index.as_view()),
+    path('', views.index)
 ]

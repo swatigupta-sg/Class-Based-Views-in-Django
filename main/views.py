@@ -7,13 +7,16 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url = '/auth/login')
 def index(request):
     colleges = models.College.objects.all()
     context = {
         "colleges":colleges
     }
     return render(request, 'index.html', context)
+
 
 class Index(ListView):
     model = models.College
